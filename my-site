@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Damu Talk - AAC Communication App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">🏠 Damu Talk</div>
+    <div class="controls">
+      <button class="lang-btn">KZ</button>
+      <button class="settings-btn" title="Ата-ана режимі">⚙️</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="categories" id="categories-container">
+      </div>
+
+    <div class="cards-grid" id="cards-container">
+      </div>
+  </main>
+
+  <footer class="sentence-strip">
+    <div class="sentence-box" id="sentence-box">
+      <span class="placeholder">Карточкаларды таңдаңыз...</span>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-speak" id="speak-btn">🔊 АЙТУ</button>
+      <button class="btn btn-clear" id="clear-btn">↩️ ӨШІРУ</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
