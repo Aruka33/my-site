@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7f6;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+.header {
+  background-color: #4A90E2;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.controls button {
+  background: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Container */
+.container {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.cat-btn {
+  background: #e0e0e0;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.cat-btn.active {
+  background: #FF9800;
+  color: white;
+}
+
+/* Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  border: 3px solid #E0E0E0;
+  border-radius: 16px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.1s, border-color 0.2s;
+}
+
+.card:active {
+  transform: scale(0.95);
+  border-color: #4A90E2;
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Sentence Strip */
+.sentence-strip {
+  background: white;
+  border-top: 2px solid #ddd;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+}
+
+.sentence-box {
+  flex: 1;
+  min-height: 60px;
+  border: 2px dashed #bbb;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  gap: 8px;
+  overflow-x: auto;
+  background: #fafafa;
+}
+
+.sentence-item {
+  background: #4A90E2;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-speak {
+  background: #4CAF50;
+  color: white;
+}
+
+.btn-clear {
+  background: #F44336;
+  color: white;
+}
