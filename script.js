@@ -1,317 +1,677 @@
+// ==========================================
+// DAMU TALK — AAC COMMUNICATION APP
+// Қазақша карточкалар арқылы сөйлем құрастыру
+// ==========================================
+
+
+// ==========================================
+// 1. КАРТОЧКАЛАР МЕН КАТЕГОРИЯЛАР
+// ==========================================
+
 const data = [
+
+  // ------------------------------
+  // БАСТЫ
+  // ------------------------------
   {
     category: "Басты",
     icon: "🏠",
+
     cards: [
-      { id: "men", title: "Мен", icon: "🧒", type: "subject" },
-      { id: "sen", title: "Сен", icon: "👤", type: "subject" },
-      { id: "ol", title: "Ол", icon: "🙂", type: "subject" },
-      { id: "ana", title: "Ана", icon: "👩", type: "person" },
-      { id: "ake", title: "Әке", icon: "👨", type: "person" },
-      { id: "kalaymyn", title: "Қалаймын", icon: "❤️", type: "verb" },
-      { id: "su", title: "Су", icon: "🥤", type: "object" },
-      { id: "tamtak", title: "Тамақ", icon: "🍎", type: "object" },
-      { id: "komek", title: "Көмек", icon: "🆘", type: "action" },
-      { id: "ia", title: "Иә", icon: "✅", type: "answer" },
-      { id: "zhok", title: "Жоқ", icon: "❌", type: "answer" }
+      ["men", "Мен", "🧒", "subject"],
+      ["sen", "Сен", "👤", "subject"],
+      ["anam", "Анам", "👩", "person"],
+      ["akem", "Әкем", "👨", "person"],
+
+      ["kalaymyn", "Қалаймын", "❤️", "verb"],
+      ["kalamaimyn", "Қаламаймын", "❌", "verb"],
+
+      ["su", "Су", "🥤", "object"],
+      ["tamaq", "Тамақ", "🍽️", "object"],
+
+      ["komek", "Көмек", "🆘", "action"],
+      ["ia", "Иә", "✅", "answer"],
+      ["joq", "Жоқ", "❌", "answer"],
+      ["tagy", "Тағы", "➕", "word"],
+      ["boldy", "Болды", "👌", "word"],
+      ["toqtа", "Тоқта", "🛑", "action"],
+      ["raqmet", "Рақмет", "🙏", "polite"]
     ]
   },
 
+
+  // ------------------------------
+  // ЖЕМІСТЕР
+  // ------------------------------
   {
-    category: "Тамақ & Ішу",
+    category: "Жемістер",
     icon: "🍎",
+
     cards: [
-      { id: "su", title: "Су", icon: "🥤", type: "object" },
-      { id: "nan", title: "Нан", icon: "🍞", type: "object" },
-      { id: "alma", title: "Алма", icon: "🍎", type: "object" },
-      { id: "sut", title: "Сүт", icon: "🥛", type: "object" },
-      { id: "shai", title: "Шай", icon: "🍵", type: "object" },
-      { id: "sok", title: "Шырын", icon: "🧃", type: "object" },
-      { id: "botka", title: "Ботқа", icon: "🥣", type: "object" },
-      { id: "sorpa", title: "Сорпа", icon: "🍲", type: "object" },
-      { id: "banan", title: "Банан", icon: "🍌", type: "object" },
-      { id: "tatti", title: "Тәтті", icon: "🍰", type: "object" }
+      ["alma", "Алма", "🍎", "object"],
+      ["banan", "Банан", "🍌", "object"],
+      ["alurt", "Алмұрт", "🍐", "object"],
+      ["zhuzim", "Жүзім", "🍇", "object"],
+      ["apelsin", "Апельсин", "🍊", "object"],
+      ["mandarin", "Мандарин", "🍊", "object"],
+      ["qauyn", "Қауын", "🍈", "object"],
+      ["qarbyz", "Қарбыз", "🍉", "object"],
+      ["qulpnai", "Құлпынай", "🍓", "object"],
+      ["shie", "Шие", "🍒", "object"]
     ]
   },
 
+
+  // ------------------------------
+  // ТАМАҚ
+  // ------------------------------
+  {
+    category: "Тамақ",
+    icon: "🍽️",
+
+    cards: [
+      ["nan", "Нан", "🍞", "object"],
+      ["tamaq", "Тамақ", "🍽️", "object"],
+      ["sorpa", "Сорпа", "🍲", "object"],
+      ["botqa", "Ботқа", "🥣", "object"],
+      ["et", "Ет", "🥩", "object"],
+      ["qurt", "Құрт", "🧀", "object"],
+      ["irімshik", "Ірімшік", "🧀", "object"],
+      ["zhumyrtqa", "Жұмыртқа", "🥚", "object"],
+      ["kartop", "Картоп", "🥔", "object"],
+      ["makaron", "Макарон", "🍝", "object"],
+      ["balmuzdaq", "Балмұздақ", "🍦", "object"],
+      ["shokolad", "Шоколад", "🍫", "object"]
+    ]
+  },
+
+
+  // ------------------------------
+  // ІШУ
+  // ------------------------------
+  {
+    category: "Ішу",
+    icon: "🥤",
+
+    cards: [
+      ["su", "Су", "🥤", "object"],
+      ["sut", "Сүт", "🥛", "object"],
+      ["shai", "Шай", "🍵", "object"],
+      ["shyrin", "Шырын", "🧃", "object"],
+      ["kakao", "Какао", "☕", "object"],
+      ["ishuu", "Ішу", "🥤", "verb"]
+    ]
+  },
+
+
+  // ------------------------------
+  // ӘРЕКЕТТЕР
+  // ------------------------------
   {
     category: "Әрекеттер",
     icon: "🎮",
+
     cards: [
-      { id: "ishuu", title: "Ішу", icon: "🥤", type: "verb" },
-      { id: "zheu", title: "Жеу", icon: "🍽️", type: "verb" },
-      { id: "oynau", title: "Ойнау", icon: "🎮", type: "verb" },
-      { id: "baru", title: "Бару", icon: "🚗", type: "verb" },
-      { id: "kelu", title: "Келу", icon: "🚶", type: "verb" },
-      { id: "zhatu", title: "Жату", icon: "🛏️", type: "verb" },
-      { id: "otiru", title: "Отыру", icon: "🪑", type: "verb" },
-      { id: "tur", title: "Тұру", icon: "🧍", type: "verb" },
-      { id: "uyktu", title: "Ұйықтау", icon: "😴", type: "verb" },
-      { id: "kutu", title: "Күту", icon: "⏳", type: "verb" }
+      ["ishuu", "Ішу", "🥤", "verb"],
+      ["zheu", "Жеу", "🍽️", "verb"],
+      ["oynau", "Ойнау", "🎮", "verb"],
+      ["baru", "Бару", "🚗", "verb"],
+      ["kelu", "Келу", "🚶", "verb"],
+      ["otu", "Отыру", "🪑", "verb"],
+      ["zatu", "Жату", "🛏️", "verb"],
+      ["turу", "Тұру", "🧍", "verb"],
+      ["zhugu", "Жүгіру", "🏃", "verb"],
+      ["zhuru", "Жүру", "🚶", "verb"],
+      ["alu", "Алу", "🤲", "verb"],
+      ["beru", "Беру", "🤝", "verb"],
+      ["ashu", "Ашу", "🔓", "verb"],
+      ["zhabu", "Жабу", "🔒", "verb"],
+      ["kutu", "Күту", "⏳", "verb"],
+      ["uyqtau", "Ұйықтау", "😴", "verb"]
     ]
   },
 
+
+  // ------------------------------
+  // ОЙЫН
+  // ------------------------------
   {
-    category: "Сезімдер",
+    category: "Ойын",
+    icon: "🎮",
+
+    cards: [
+      ["oynau", "Ойнау", "🎮", "verb"],
+      ["dop", "Доп", "⚽", "object"],
+      ["mashina", "Машина", "🚗", "object"],
+      ["lego", "Лего", "🧱", "object"],
+      ["qurstyru", "Құрастыру", "🧩", "verb"],
+      ["surеt", "Сурет", "🎨", "object"],
+      ["muzika", "Музыка", "🎵", "object"],
+      ["multfilm", "Мультфильм", "📺", "object"]
+    ]
+  },
+
+
+  // ------------------------------
+  // СЕЗІМ
+  // ------------------------------
+  {
+    category: "Сезім",
     icon: "😊",
+
     cards: [
-      { id: "bakyt", title: "Бақытты", icon: "😊", type: "feeling" },
-      { id: "munai", title: "Мұңайдым", icon: "😢", type: "feeling" },
-      { id: "ashu", title: "Ашулымын", icon: "😡", type: "feeling" },
-      { id: "qorqamyn", title: "Қорқамын", icon: "😨", type: "feeling" },
-      { id: "sharshadym", title: "Шаршадым", icon: "😴", type: "feeling" },
-      { id: "auyrady", title: "Ауырып тұр", icon: "🤕", type: "feeling" },
-      { id: "zhaksy", title: "Жақсымын", icon: "🙂", type: "feeling" },
-      { id: "unady", title: "Ұнайды", icon: "❤️", type: "feeling" }
+      ["zhaksy", "Жақсы", "😊", "feeling"],
+      ["zhaman", "Жаман", "😞", "feeling"],
+      ["qorqamyn", "Қорқамын", "😨", "feeling"],
+      ["quanamyn", "Қуанамын", "😄", "feeling"],
+      ["ashulymyn", "Ашулымын", "😠", "feeling"],
+      ["zhylap_turmin", "Жылап тұрмын", "😭", "feeling"],
+      ["sharshadym", "Шаршадым", "😴", "feeling"],
+      ["auyrady", "Ауырады", "🤕", "feeling"],
+      ["rahat", "Рахат", "😌", "feeling"]
     ]
   },
 
+
+  // ------------------------------
+  // ДЕНЕ
+  // ------------------------------
   {
-    category: "Ойын & Демалыс",
-    icon: "🎨",
+    category: "Дене",
+    icon: "🧍",
+
     cards: [
-      { id: "dop", title: "Доп", icon: "⚽", type: "object" },
-      { id: "mashina", title: "Машина", icon: "🚗", type: "object" },
-      { id: "kitap", title: "Кітап", icon: "📚", type: "object" },
-      { id: "multfilm", title: "Мультфильм", icon: "📺", type: "object" },
-      { id: "muzika", title: "Музыка", icon: "🎵", type: "object" },
-      { id: "sur", title: "Сурет салу", icon: "🎨", type: "action" },
-      { id: "oiyn", title: "Ойын", icon: "🎮", type: "object" },
-      { id: "seruen", title: "Серуендеу", icon: "🚶", type: "action" }
+      ["bas", "Бас", "🧠", "body"],
+      ["koz", "Көз", "👁️", "body"],
+      ["qulaq", "Құлақ", "👂", "body"],
+      ["muryn", "Мұрын", "👃", "body"],
+      ["auyz", "Ауыз", "👄", "body"],
+      ["qol", "Қол", "✋", "body"],
+      ["ayaq", "Аяқ", "🦶", "body"],
+      ["ish", "Іш", "🫃", "body"],
+      ["tіс", "Тіс", "🦷", "body"]
     ]
   },
 
+
+  // ------------------------------
+  // ОРЫНДАР
+  // ------------------------------
+  {
+    category: "Орындар",
+    icon: "📍",
+
+    cards: [
+      ["ui", "Үй", "🏠", "place"],
+      ["mektep", "Мектеп", "🏫", "place"],
+      ["balabaqsha", "Балабақша", "🏫", "place"],
+      ["duken", "Дүкен", "🏪", "place"],
+      ["auruhana", "Аурухана", "🏥", "place"],
+      ["park", "Парк", "🌳", "place"],
+      ["dala", "Дала", "🌳", "place"],
+      ["daret", "Дәретхана", "🚻", "place"]
+    ]
+  },
+
+
+  // ------------------------------
+  // АДАМДАР
+  // ------------------------------
   {
     category: "Адамдар",
     icon: "👨‍👩‍👧",
+
     cards: [
-      { id: "ana", title: "Ана", icon: "👩", type: "person" },
-      { id: "ake", title: "Әке", icon: "👨", type: "person" },
-      { id: "apa", title: "Апа", icon: "👵", type: "person" },
-      { id: "ata", title: "Ата", icon: "👴", type: "person" },
-      { id: "aga", title: "Аға", icon: "👦", type: "person" },
-      { id: "epke", title: "Әпке", icon: "👧", type: "person" },
-      { id: "dos", title: "Досым", icon: "🧑‍🤝‍🧑", type: "person" },
-      { id: "mugalim", title: "Мұғалім", icon: "👩‍🏫", type: "person" }
+      ["anam", "Анам", "👩", "person"],
+      ["akem", "Әкем", "👨", "person"],
+      ["apa", "Апа", "👵", "person"],
+      ["ata", "Ата", "👴", "person"],
+      ["agа", "Аға", "👦", "person"],
+      ["apa_sіңli", "Әпке", "👧", "person"],
+      ["dos", "Дос", "🧑", "person"],
+      ["mugalim", "Мұғалім", "👩‍🏫", "person"]
     ]
   },
 
+
+  // ------------------------------
+  // САПА / СИПАТ
+  // ------------------------------
   {
-    category: "Жерлер",
-    icon: "📍",
+    category: "Сипаттар",
+    icon: "⭐",
+
     cards: [
-      { id: "ui", title: "Үй", icon: "🏠", type: "place" },
-      { id: "mektep", title: "Мектеп", icon: "🏫", type: "place" },
-      { id: "aul", title: "Аула", icon: "🌳", type: "place" },
-      { id: "duken", title: "Дүкен", icon: "🏪", type: "place" },
-      { id: "park", title: "Саябақ", icon: "🌲", type: "place" },
-      { id: "auruhana", title: "Аурухана", icon: "🏥", type: "place" },
-      { id: "daret", title: "Дәретхана", icon: "🚻", type: "place" }
+      ["ulken", "Үлкен", "⬆️", "word"],
+      ["kishkentai", "Кішкентай", "⬇️", "word"],
+      ["zhaksy", "Жақсы", "😊", "word"],
+      ["zhaman", "Жаман", "😞", "word"],
+      ["qyzyl", "Қызыл", "🔴", "word"],
+      ["kok", "Көк", "🔵", "word"],
+      ["zhasyl", "Жасыл", "🟢", "word"],
+      ["aq", "Ақ", "⚪", "word"],
+      ["qara", "Қара", "⚫", "word"],
+      ["tatti", "Тәтті", "🍬", "word"],
+      ["asty", "Ащы", "🌶️", "word"],
+      ["ystyq", "Ыстық", "🔥", "word"],
+      ["suıq", "Суық", "❄️", "word"]
     ]
   },
 
+
+  // ------------------------------
+  // ҚАЖЕТТІЛІК
+  // ------------------------------
   {
-    category: "Қажеттіліктер",
-    icon: "🧸",
+    category: "Қажет",
+    icon: "🆘",
+
     cards: [
-      { id: "toilet", title: "Дәретхана керек", icon: "🚻", type: "need" },
-      { id: "uyku", title: "Ұйқым келіп тұр", icon: "😴", type: "need" },
-      { id: "demal", title: "Демалғым келеді", icon: "🛋️", type: "need" },
-      { id: "kiim", title: "Киім", icon: "👕", type: "object" },
-      { id: "ayaqkiim", title: "Аяқ киім", icon: "👟", type: "object" },
-      { id: "oiynshyk", title: "Ойыншық", icon: "🧸", type: "object" },
-      { id: "telefon", title: "Телефон", icon: "📱", type: "object" }
+      ["komek", "Көмек", "🆘", "action"],
+      ["su", "Су керек", "🥤", "need"],
+      ["tamaq", "Тамақ керек", "🍽️", "need"],
+      ["daret", "Дәретхана керек", "🚻", "need"],
+      ["uyqym_keladi", "Ұйқым келеді", "😴", "need"],
+      ["demalym_keladi", "Демалғым келеді", "🛋️", "need"],
+      ["sharshadym", "Шаршадым", "😴", "feeling"],
+      ["auyrady", "Ауырады", "🤕", "feeling"]
+    ]
+  },
+
+
+  // ------------------------------
+  // ӘДЕП
+  // ------------------------------
+  {
+    category: "Әдеп",
+    icon: "🙏",
+
+    cards: [
+      ["raqmet", "Рақмет", "🙏", "polite"],
+      ["otinish", "Өтінемін", "🥺", "polite"],
+      ["keshiresiz", "Кешіріңіз", "🙏", "polite"],
+      ["salam", "Сәлем", "👋", "polite"],
+      ["sau_bol", "Сау бол", "👋", "polite"],
+      ["ia", "Иә", "✅", "answer"],
+      ["joq", "Жоқ", "❌", "answer"]
     ]
   }
+
 ];
+
+
+// ==========================================
+// 2. НЕГІЗГІ АЙНЫМАЛЫЛАР
+// ==========================================
 
 let selectedCards = [];
 let currentCategoryIndex = 0;
 
-const categoriesContainer = document.getElementById("categories-container");
-const cardsContainer = document.getElementById("cards-container");
-const sentenceBox = document.getElementById("sentence-box");
-const speakBtn = document.getElementById("speak-btn");
-const clearBtn = document.getElementById("clear-btn");
+
+// ==========================================
+// 3. HTML ЭЛЕМЕНТТЕРІ
+// ==========================================
+
+const categoriesContainer =
+  document.getElementById("categories-container");
+
+const cardsContainer =
+  document.getElementById("cards-container");
+
+const sentenceBox =
+  document.getElementById("sentence-box");
+
+const speakBtn =
+  document.getElementById("speak-btn");
+
+const clearBtn =
+  document.getElementById("clear-btn");
+
+
+// ==========================================
+// 4. ДАУЫСТАП ОҚУ
+// ==========================================
+
+function speakText(text) {
+
+  if (!text) return;
+
+  // Алдыңғы дауысты тоқтату
+  window.speechSynthesis.cancel();
+
+  const utterance =
+    new SpeechSynthesisUtterance(text);
+
+  utterance.lang = "kk-KZ";
+  utterance.rate = 0.85;
+  utterance.pitch = 1;
+
+  window.speechSynthesis.speak(utterance);
+}
+
+
+// ==========================================
+// 5. КАРТОЧКАНЫ ҚАЛЫПТАНДЫРУ
+// ==========================================
+
+function normalizeCard(card) {
+
+  // Массив түріндегі карточка
+  if (Array.isArray(card)) {
+
+    return {
+      id: card[0],
+      title: card[1],
+      icon: card[2],
+      type: card[3]
+    };
+  }
+
+  // Объект түріндегі карточка
+  return card;
+}
+
+
+// ==========================================
+// 6. КАТЕГОРИЯЛАРДЫ ШЫҒАРУ
+// ==========================================
 
 function renderCategories() {
+
+  if (!categoriesContainer) return;
+
   categoriesContainer.innerHTML = "";
 
   data.forEach((category, index) => {
-    const button = document.createElement("button");
+
+    const button =
+      document.createElement("button");
 
     button.className =
-      "cat-btn " + (index === currentCategoryIndex ? "active" : "");
+      "cat-btn " +
+      (index === currentCategoryIndex
+        ? "active"
+        : "");
 
-    button.innerText =
-      category.icon + " " + category.category;
+    button.textContent =
+      `${category.icon} ${category.category}`;
 
-    button.onclick = function () {
+    button.addEventListener("click", () => {
+
       currentCategoryIndex = index;
+
       renderCategories();
       renderCards();
-    };
+
+    });
 
     categoriesContainer.appendChild(button);
   });
 }
 
+
+// ==========================================
+// 7. КАРТОЧКАЛАРДЫ ШЫҒАРУ
+// ==========================================
+
 function renderCards() {
+
+  if (!cardsContainer) return;
+
   cardsContainer.innerHTML = "";
 
-  const category = data[currentCategoryIndex];
+  const category =
+    data[currentCategoryIndex];
 
-  category.cards.forEach((card) => {
-    const cardElement = document.createElement("div");
+  if (!category || !category.cards) {
 
-    cardElement.className = "card";
+    cardsContainer.innerHTML =
+      "<p>Карточкалар жоқ.</p>";
 
-    cardElement.innerHTML =
-      '<div class="card-icon">' +
-      card.icon +
-      '</div>' +
-      '<div class="card-title">' +
-      card.title +
-      '</div>';
-
-    cardElement.onclick = function () {
-      addCardToSentence(card);
-    };
-
-    cardsContainer.appendChild(cardElement);
-  });
-}
-
-function addCardToSentence(card) {
-  selectedCards.push(card);
-  updateSentenceUI();
-}
-
-function updateSentenceUI() {
-  sentenceBox.innerHTML = "";
-
-  if (selectedCards.length === 0) {
-    sentenceBox.innerHTML =
-      '<span class="placeholder">Карточкаларды таңдаңыз...</span>';
     return;
   }
 
-  selectedCards.forEach((card, index) => {
-    const item = document.createElement("div");
+  category.cards.forEach((rawCard) => {
 
-    item.className = "sentence-item";
+    const card =
+      normalizeCard(rawCard);
 
-    item.innerHTML =
-      "<span>" +
-      card.icon +
-      "</span> " +
-      "<span>" +
-      card.title +
-      "</span>";
+    const cardElement =
+      document.createElement("div");
 
-    item.onclick = function () {
-      selectedCards.splice(index, 1);
+    cardElement.className = "card";
+
+    cardElement.innerHTML = `
+      <div class="card-icon">
+        ${card.icon || "🔹"}
+      </div>
+
+      <div class="card-title">
+        ${card.title || ""}
+      </div>
+    `;
+
+
+    // ======================================
+    // КАРТОЧКАНЫ БАСҚАН КЕЗДЕ
+    // ======================================
+
+    cardElement.addEventListener("click", () => {
+
+      // Сөйлемге қосу
+      selectedCards.push(card);
+
+      // Экранды жаңарту
       updateSentenceUI();
-    };
 
-    sentenceBox.appendChild(item);
+      // КАРТОЧКАНЫ ДАУЫСТАП ОҚУ
+      speakText(card.title);
+
+    });
+
+
+    cardsContainer.appendChild(cardElement);
+
   });
 }
 
-function buildKazakhSentence(cards) {
-  const ids = cards.map(function (card) {
-    return card.id;
+
+// ==========================================
+// 8. СӨЙЛЕМГЕ КАРТОЧКА ҚОСУ
+// ==========================================
+
+function addCardToSentence(card) {
+
+  selectedCards.push(card);
+
+  updateSentenceUI();
+
+}
+
+
+// ==========================================
+// 9. СӨЙЛЕМ UI
+// ==========================================
+
+function updateSentenceUI() {
+
+  if (!sentenceBox) return;
+
+  sentenceBox.innerHTML = "";
+
+  if (selectedCards.length === 0) {
+
+    sentenceBox.innerHTML =
+      '<span class="placeholder">Карточкаларды таңдаңыз...</span>';
+
+    return;
+  }
+
+
+  selectedCards.forEach((card) => {
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      "sentence-item";
+
+    item.innerHTML = `
+      <span>${card.icon || "🔹"}</span>
+      <span>${card.title}</span>
+    `;
+
+    sentenceBox.appendChild(item);
+
   });
 
+}
+
+
+// ==========================================
+// 10. ҚАЗАҚША СӨЙЛЕМ ҚҰРАСТЫРУ
+// ==========================================
+
+function buildKazakhSentence(cards) {
+
+  const ids =
+    cards.map(card => card.id);
+
+
+  // Мен + Су + Ішу
   if (
     ids.includes("men") &&
     ids.includes("su") &&
     ids.includes("ishuu")
   ) {
+
     return "Мен су ішкім келеді";
+
   }
 
+
+  // Мен + Алма + Жеу
   if (
     ids.includes("men") &&
     ids.includes("alma") &&
     ids.includes("zheu")
   ) {
+
     return "Мен алма жегім келеді";
+
   }
 
+
+  // Мен + Тамақ
   if (
     ids.includes("men") &&
-    ids.includes("nan") &&
-    ids.includes("zheu")
+    ids.includes("tamaq")
   ) {
-    return "Мен нан жегім келеді";
+
+    return "Мен тамақ жегім келеді";
+
   }
 
+
+  // Мен + Су
   if (
     ids.includes("men") &&
-    ids.includes("sut") &&
-    ids.includes("ishuu")
+    ids.includes("su")
   ) {
-    return "Мен сүт ішкім келеді";
+
+    return "Мен су қалаймын";
+
   }
 
+
+  // Мен + Ойнау
   if (
     ids.includes("men") &&
     ids.includes("oynau")
   ) {
+
     return "Мен ойнағым келеді";
+
   }
 
+
+  // Мен + Бару
   if (
     ids.includes("men") &&
     ids.includes("baru")
   ) {
+
     return "Мен барғым келеді";
+
   }
 
-  if (
-    ids.includes("men") &&
-    ids.includes("uyktu")
-  ) {
-    return "Мен ұйықтағым келеді";
-  }
 
+  // Мен + Көмек
   if (
     ids.includes("men") &&
     ids.includes("komek")
   ) {
+
     return "Маған көмек керек";
+
   }
 
+
+  // Қарапайым жағдайда
   return cards
-    .map(function (card) {
-      return card.title;
-    })
+    .map(card => card.title)
     .join(" ");
+
 }
 
-speakBtn.onclick = function () {
-  if (selectedCards.length === 0) {
-    return;
-  }
 
-  const text = buildKazakhSentence(selectedCards);
+// ==========================================
+// 11. "АЙТУ" БАТЫРМАСЫ
+// ==========================================
 
-  const utterance = new SpeechSynthesisUtterance(text);
+if (speakBtn) {
 
-  utterance.lang = "kk-KZ";
-  utterance.rate = 0.9;
-  utterance.pitch = 1;
+  speakBtn.addEventListener("click", () => {
 
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utterance);
-};
+    if (selectedCards.length === 0) {
+      return;
+    }
 
-clearBtn.onclick = function () {
-  selectedCards = [];
-  updateSentenceUI();
-};
+    const sentence =
+      buildKazakhSentence(selectedCards);
+
+    speakText(sentence);
+
+  });
+
+}
+
+
+// ==========================================
+// 12. "ӨШІРУ" БАТЫРМАСЫ
+// ==========================================
+
+if (clearBtn) {
+
+  clearBtn.addEventListener("click", () => {
+
+    selectedCards = [];
+
+    updateSentenceUI();
+
+    window.speechSynthesis.cancel();
+
+  });
+
+}
+
+
+// ==========================================
+// 13. БАСТАПҚЫ ІСКЕ ҚОСУ
+// ==========================================
 
 renderCategories();
+
 renderCards();
+
 updateSentenceUI();
