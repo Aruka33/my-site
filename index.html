@@ -1,39 +1,81 @@
+
+```html
 <!DOCTYPE html>
 <html lang="kk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Damu Talk - AAC Communication App</title>
+  <meta name="theme-color" content="#4A90E2">
+  <title>Damu Talk — Қазақша AAC</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header class="header">
-    <div class="logo">🏠 Damu Talk</div>
-    <div class="controls">
-      <button class="lang-btn">KZ</button>
-      <button class="settings-btn" title="Ата-ана режимі">⚙️</button>
+<header class="header">
+  <div class="logo">🏠 Damu Talk</div>
+
+  <div class="controls">
+    <button class="lang-btn">KZ</button>
+    <button class="settings-btn" title="Баптаулар">⚙️</button>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="search-box">
+    <span>🔎</span>
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Карточка іздеу..."
+      autocomplete="off"
+    >
+  </div>
+
+  <div class="categories" id="categories-container"></div>
+
+  <div class="category-title" id="category-title"></div>
+
+  <div class="cards-grid" id="cards-container"></div>
+
+</main>
+
+<footer class="sentence-strip">
+
+  <div class="sentence-area">
+
+    <div class="sentence-label">
+      <span>💬 Менің сөйлемім:</span>
+      <span id="word-count">0 сөз</span>
     </div>
-  </header>
 
-  <main class="container">
-    <div class="categories" id="categories-container">
-      </div>
-
-    <div class="cards-grid" id="cards-container">
-      </div>
-  </main>
-
-  <footer class="sentence-strip">
     <div class="sentence-box" id="sentence-box">
-      <span class="placeholder">Карточкаларды таңдаңыз...</span>
+      <span class="placeholder">
+        Карточкаларды таңдаңыз...
+      </span>
     </div>
-    <div class="action-buttons">
-      <button class="btn btn-speak" id="speak-btn">🔊 АЙТУ</button> 
-      <button class="btn btn-clear" id="clear-btn">↩️ ӨШІРУ</button>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
+  </div>
+
+  <div class="action-buttons">
+    <button class="btn btn-speak" id="speak-btn">
+      🔊 АЙТУ
+    </button>
+
+    <button class="btn btn-undo" id="undo-btn">
+      ↩️
+    </button>
+
+    <button class="btn btn-clear" id="clear-btn">
+      🗑️
+    </button>
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
+```
